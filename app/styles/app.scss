@@ -1,2 +1,12 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.main-title {
+  font-size: 48px;
+  display: inline-flex;
+  overflow: auto;
+  text-align: center;
+}
