@@ -3,7 +3,9 @@
 {{post-form createPost='createPost'}}
 <br>
 
-  {{#each model as |post|}}
+
+
+{{#each model as |post|}}
 
 <article class="article-preview">
   <div class="row">
@@ -14,6 +16,7 @@
       <div class="author">
 
       <h4><span class="author-name">{{post.user}}</span></h4>
+      {{update-post post=post update="update"}}
       </div>
       </div>
     </div>

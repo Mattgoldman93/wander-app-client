@@ -1,5 +1,11 @@
 {{#link-to "posts"}}Take me Back!{{/link-to}}
 <h1>title</h1>
-{{post.content}}
-{{post.attachment}}
+<ul>
+  <li>
+    {{model.content}}
+  </li>
+  <li>
+    {{model.attachment}}
+  </li>
+</ul>
 <button {{action 'deletePost'}} class="btn btn-danger">Delete</button>

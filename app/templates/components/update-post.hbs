@@ -1,0 +1,19 @@
+{{#if updatePostForm}}
+  <div>
+    <form>
+
+      <div class="form-group">
+        <label for="content">Content</label>
+        {{input value=content id="content" placeholder=post.content}}
+      </div>
+
+      <div class="form-group">
+        <label for="attachment">Attachment</label>
+        {{input value=attachment id="attachment" type="file" placeholder=post.attachment}}
+      </div>
+      <button {{action 'update' post}}>Save</button>
+    </form>
+  </div>
+{{else}}
+  <button {{action 'updatePostForm'}}>Update</button>
+{{/if}}
