@@ -17,7 +17,11 @@ export default Ember.Route.extend({
           .danger('There was a problem. Are you sure you\'re signed-in?');
         });
     },
-
+    model: function() {
+      return this.get('store').find('post').then(function(posts) {
+        return posts.sortBy('datePublished').reverseObjects();
+      });
+    },
     error (reason) {
       let unauthorized = reason.errors && reason.errors.some((error) =>
         error.status === '401'
