@@ -9,7 +9,8 @@
   <div class="row">
     <div class="col-sm-10">
       <h2 class="post-title">{{#link-to "post" post}}{{#if post.title}}{{post.title}}{{else}}🌍{{/if}} {{/link-to}}</h2>
-        <h4><span class="post-user">by: {{post.user_id}}</span></h4>
+        <h4><span class="post-user">by:
+          {{#if post.user}}{{post.user_id}}{{else}}anonymous{{/if}} </span></h4>
     </div>
   </div>
 </article>
