@@ -1,7 +1,7 @@
 <h3>Create a New Post</h3>
 
 <form {{action 'createPost' on='submit'}}>
-{{input class="content-input" placeholder="Post content goes here" value=newPost.content}}
-{{input class="attachment-input" type="file" value=newPost.attachment}}
+{{input class="title-input" placeholder="Where'd you go" value=newPost.title}}
+{{input class="content-input" placeholder="Tell us about it" value=newPost.content}}
   <button type="submit">Save that</button>
 </form>

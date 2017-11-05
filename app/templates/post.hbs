@@ -1,11 +1,12 @@
 {{#link-to "posts"}}Take me Back!{{/link-to}}
-<h1>title</h1>
-<ul>
-  <li>
-    {{model.content}}
-  </li>
-  <li>
-    {{model.attachment}}
-  </li>
-</ul>
-<button {{action 'deletePost'}} class="btn btn-danger">Delete</button>
+<article class="post">
+  <h1 class="post-title">{{model.title}}</h1>
+  <h4><span class="post-user">by: {{model.user_id}}</span></h4>
+  <div class="post-content">
+    <p>{{model.content}}</p>
+    {{update-post post=model update="update"}}
+    <p>Last updated at: {{#if model.updated_at}}{{model.updated_at}}{{else}}{{model.crcreated_at}}{{/if}}</p>
+  </div>
+  <button {{action 'deletePost'}} class="btn btn-danger">Delete</button>
+
+</article>

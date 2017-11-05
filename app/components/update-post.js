@@ -7,12 +7,18 @@ export default Ember.Component.extend({
       this.set('updatePostForm', true);
     },
     update(post) {
+      console.log(post)
       var params = {
-        content: this.get('content'),
-        attachment: this.get('attachment'),
+        title: this.get('title'),
+        content: this.get('content')
       };
       this.set('updatePostForm', false);
-      this.sendAction('update', post, params);
+      Object.keys(params).forEach(function(key) {
+      if(params[key]!==undefined) {
+        post.set(key,params[key]);
+        }
+      });
+      post.save();
     }
   }
 });
