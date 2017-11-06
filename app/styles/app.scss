@@ -7,17 +7,34 @@ html, body {
   margin: 0 !important;
   padding: 0 !important;
 }
+body {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e8/Out_of_Focus_Green_Backgounds-18.jpg);
+}
 ul {
   list-style: none;
+}
+a {
+  text-decoration: none;
+}
+input {
+  margin: 1em;
+}
+textarea {
+  margin: 1em;
 }
 .main-title {
   font-size: 48px;
   display: inline-flex;
   overflow: auto;
   text-align: center;
+  color: #35281E;
 }
-
-
+div {
+  padding: .5em;
+}
+nav {
+  background-color: rgba(249,244,242, 0.5);
+}
 
 /* Text Centering Shortcut */
 .horizontal-center {
@@ -87,6 +104,10 @@ article {
   border: 1px solid #000;
   margin: 1em;
   padding: 1em;
+  background-color: rgba(249,244,242, 0.5);
+}
+.light-text {
+  color: #eee;
 }
 article h2, article h3 {
   font-family: 'ubuntu'
@@ -110,6 +131,10 @@ article h2, article h3 {
   font-family: 'ubuntu';
 }
 
+.post-title {
+  text-decoration: none;
+  color: #eee;
+}
 /* Footer */
 footer {
   background-color: #1f4a6f;

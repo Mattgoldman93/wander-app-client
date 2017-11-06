@@ -1,12 +1,36 @@
-{{#link-to "posts"}}Take me Back!{{/link-to}}
+{{#link-to "posts" class="light-text"}}Take me Back!{{/link-to}}
 <article class="post">
   <h1 class="post-title">{{model.title}}</h1>
   <h4><span class="post-user">by: {{model.user_id}}</span></h4>
   <div class="post-content">
-    <p>{{model.content}}</p>
-    {{update-post post=model update="update"}}
-    <p>Last updated at: {{#if model.updated_at}}{{model.updated_at}}{{else}}{{model.crcreated_at}}{{/if}}</p>
-  </div>
-  <button {{action 'deletePost'}} class="btn btn-danger">Delete</button>
+    <article>
+      {{model.content}}
+    </article>
 
+    {{update-post post=model update="update"}}
+    <p>
+      Last updated at:
+      {{#if post.updated_at}}
+        {{model.updated_at}}
+      {{else}}
+        {{model.created_at}}
+      {{/if}}
+    </p>
+  </div>
+  <div class="comments">
+
+    <h2>Comments</h2>
+    {{#if model.comments}}
+      <ul>
+        {{#each model.comments as |comment|}}
+          <li>{{comment.comment}}</li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>There are no comments yet.</p>
+    {{/if}}
+    {{post-comment saveComment='saveComment'}}
+  </div>
+
+  <button {{action 'deletePost'}} class="btn btn-danger">Delete This Post</button>
 </article>

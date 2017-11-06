@@ -1,17 +1,18 @@
-<h1>Helloooo</h1>
-
 {{post-form createPost='createPost'}}
 <br>
-
+<h3 class="light-text">Recent Posts: </h3>
+{{#if model}}
 {{#each model as |post|}}
 
-<article class="article-preview">
+
   <div class="row">
     <div class="col-sm-10">
-      <h2 class="post-title">{{#link-to "post" post}}{{#if post.title}}{{post.title}}{{else}}🌍{{/if}} {{/link-to}}</h2>
-        <h4><span class="post-user">by:
-          {{#if post.user}}{{post.user_id}}{{else}}anonymous{{/if}} </span></h4>
+      <h2 class="post-title light-text">{{#link-to "post" post}}{{#if post.title}}{{post.title}}{{else}}🌍{{/if}} {{/link-to}}</h2>
+
     </div>
   </div>
-</article>
+
 {{/each}}
+{{else}}
+<h4 class="light-text">No posts yet <span style="font-size:24px;">😥</span></h4>
+{{/if}}

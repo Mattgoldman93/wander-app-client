@@ -1,7 +1,9 @@
-<h3>Create a New Post</h3>
+<h1 class="light-text">Create a New Post</h1>
 
 <form {{action 'createPost' on='submit'}}>
-{{input class="title-input" placeholder="Where'd you go" value=newPost.title}}
-{{input class="content-input" placeholder="Tell us about it" value=newPost.content}}
-  <button type="submit">Save that</button>
+{{input class="title-input" placeholder="Where'd you go?" value=newPost.title}}
+{{textarea class="form-control comment-input"
+rows='3'
+ placeholder="Tell us about it" value=newPost.content}}
+  <button class="btn btn-primary" type="submit">Share</button>
 </form>

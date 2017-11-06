@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    updatePostForm: false,
+  updatePostForm: false,
+
   model() {
     return this.get('store').findAll('post');
   },
@@ -9,6 +10,6 @@ export default Ember.Route.extend({
     createPost (post) {
     let newPost = this.get('store').createRecord('post', post);
     newPost.save();
-  }
+    },
   }
 });
