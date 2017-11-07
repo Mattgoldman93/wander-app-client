@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
+  model: function(params) {
+   return this.get('store').findRecord('post', params.post_id, {include: 'comments'});
+
+ },
  actions: {
    deletePost(){
      let deleteThis = this.currentModel;

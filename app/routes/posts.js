@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   updatePostForm: false,
-
   model() {
     return this.get('store').findAll('post');
   },
