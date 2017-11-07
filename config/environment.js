@@ -52,7 +52,7 @@ module.exports = function (environment) {
   if (environment === 'production') {
     ENV.rootURL = '/wander-app-client';
     ENV.locationType = 'hash';
-    ENV.apiHost = 'https://dreadful-citadel-51922.herokuapp.com/';
+    ENV.apiHost = 'https://dreadful-citadel-51922.herokuapp.com';
   }
 
   return ENV;
