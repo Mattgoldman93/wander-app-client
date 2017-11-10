@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  flashMessages: Ember.inject.service(),
   updatePostForm: false,
   actions: {
     updatePostForm() {
       this.set('updatePostForm', true);
     },
     update(post) {
-      console.log(post)
       var params = {
         title: this.get('title'),
         content: this.get('content')
@@ -18,7 +18,14 @@ export default Ember.Component.extend({
         post.set(key,params[key]);
         }
       });
-      post.save();
+      post.save()
+      .then(() => {
+        this.get('flashMessages').success('Successfully Updated your post!')
+      })
+      .catch(() => {
+        this.get('flashMessages').danger('You do not have permission to update this post! 👎')
+        post.rollbackAttributes()
+      });
     }
   }
 });
