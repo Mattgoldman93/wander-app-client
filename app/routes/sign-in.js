@@ -13,11 +13,12 @@ export default Ember.Route.extend({
     signIn (credentials) {
       console.log(credentials)
       return this.get('auth').signIn(credentials)
-      // .then(() => this.transitionTo('/'))
+      .then(() => this.transitionTo('posts'))
       .then(() => this.get('flashMessages').success('Thanks for signing in!'))
       .catch(() => {
         this.get('flashMessages')
         .danger('There was a problem. Please try again.');
+          this.transitionTo('sign-in')
       });
     },
   },
