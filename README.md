@@ -1,9 +1,10 @@
 # Welcome to Wander
 
 Wander is a ~~social network~~ blogging platform that intends to give travellers a place to share their travels, suggestions and experiences with a community of fellow explorers. Blog posts may be commented on and all CRUD actions are possible. For this iteration, comments may only be created.  As of right now, these are the only features [but there will be many more to come](#future-releases)
-[Link to Client deployed via GH pages](https://mattgoldman93.github.io/wander-app-client/#/posts)
-[Link to API repo](https://github.com/Mattgoldman93/wander-app-api)
-[Link to API deployed via Heroku](https://dreadful-citadel-51922.herokuapp.com/)
+
+- [Link to Client deployed via GH pages](https://mattgoldman93.github.io/wander-app-client/#/posts)
+- [Link to API repo](https://github.com/Mattgoldman93/wander-app-api)
+- [Link to API deployed via Heroku](https://dreadful-citadel-51922.herokuapp.com/)
 
 ![](wanderSS.png)
 ## Development Process
