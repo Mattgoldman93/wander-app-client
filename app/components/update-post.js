@@ -24,6 +24,7 @@ export default Ember.Component.extend({
       })
       .catch(() => {
         this.get('flashMessages').danger('You do not have permission to update this post! 👎')
+        post.rollbackAttributes()
       });
     }
   }
