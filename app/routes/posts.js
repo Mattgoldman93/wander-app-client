@@ -14,8 +14,9 @@ export default Ember.Route.extend({
       .success('Successfully Posted!');
     })
     .catch(() => {
-      this.get('flashMessages').danger('There was a problem. Please try again.');
-      this.transitionTo('sign-up');
+      this.get('flashMessages').danger('There was a problem. Please make sure you are signed in and included the necessary fields.');
+      this.transitionTo('sign-in');
+      newPost.rollbackAttributes()
     });
     },
   }

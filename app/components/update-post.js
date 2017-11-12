@@ -8,7 +8,7 @@ export default Ember.Component.extend({
       this.set('updatePostForm', true);
     },
     update(post) {
-      var params = {
+      let params = {
         title: this.get('title'),
         content: this.get('content')
       };
@@ -24,7 +24,6 @@ export default Ember.Component.extend({
       })
       .catch(() => {
         this.get('flashMessages').danger('You do not have permission to update this post! 👎')
-        post.rollbackAttributes()
       });
     }
   }

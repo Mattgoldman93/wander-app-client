@@ -2,10 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   flashMessages: Ember.inject.service(),
-
   model: function(params) {
-   return this.get('store').findRecord('post', params.post_id, {include: 'comments'});
-
+   return  this.get('store').findRecord('post', params.post_id, {include: 'comments'});
  },
  actions: {
    deletePost(){
