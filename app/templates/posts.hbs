@@ -1,13 +1,13 @@
 {{post-form createPost='createPost'}}
 <br>
-<h3 class="light-text">Recent Posts: </h3>
+<h2 class="light-text">Recent Posts: </h2>
 {{#if model}}
 {{#each model as |post|}}
 
 
   <div class="row">
     <div class="col-sm-10">
-      <h2 class="post-title light-text">{{#link-to "post" post}}{{#if post.title}}{{post.title}}{{else}}🌍{{/if}} {{/link-to}}</h2>
+      <h3 class="post-title light-text">{{#link-to "post" post}}{{post.title}}{{/link-to}}</h3>
 
     </div>
   </div>
