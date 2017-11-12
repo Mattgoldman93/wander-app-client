@@ -8,14 +8,14 @@ export default Ember.Route.extend({
     signUp (credentials) {
       this.get('auth').signUp(credentials)
       .then(() => this.get('auth').signIn(credentials))
-      // .then(() => this.transitionTo('posts'))
+      .then(() => this.transitionTo('posts'))
       .then(() => {
         this.get('flashMessages')
         .success('Successfully signed-up! You have also been signed-in.');
       })
       .catch(() => {
-        this.get('flashMessages')
-        .danger('There was a problem. Please try again.');
+        this.get('flashMessages').danger('There was a problem. Please try again.');
+        this.transitionTo('sign-up');
       });
     },
   },

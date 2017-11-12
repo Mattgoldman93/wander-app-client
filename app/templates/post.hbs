@@ -1,7 +1,7 @@
 {{#link-to "posts" class="light-text"}}Take me Back!{{/link-to}}
 <article class="post">
   <h1 class="post-title">{{model.title}}</h1>
-  <h4><span class="post-user">by: {{model.user_id}}</span></h4>
+  <h4><span class="post-user">by: {{model.user.email}}</span></h4>
   <div class="post-content">
     <article>
       {{model.content}}
@@ -17,13 +17,15 @@
       {{/if}}
     </p>
   </div>
-  <div class="comments">
-
+  <div>
     <h2>Comments</h2>
     {{#if model.comments}}
       <ul>
         {{#each model.comments as |comment|}}
-          <li>{{comment.comment}}</li>
+        <li class="comment">
+          <h3> {{comment.user.email}}: <span class="smaller"> {{comment.comment}}</span> </h3>
+
+        </li>
         {{/each}}
       </ul>
     {{else}}
